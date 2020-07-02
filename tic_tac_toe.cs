@@ -10,131 +10,80 @@ namespace TicTacToe1
     class Program
 
     {
-        static char[] NumTablica = 
-        { 
-            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' 
+        static char[] NumTablica =
+        {
+            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
         };
 
-        static int player = 1;  
+        static int player = 1;
 
-        static int choice;    
+        static int choice;
 
         static int flag = 0;
         static void Main(string[] args)
-
         {
-
+            Start();
+            
             do
-
             {
-                Start();
-
+                
                 Console.WriteLine("Player 1 is X || Player 2 is O");
 
                 Console.WriteLine("\n");
 
-                
-
-                if (player % 2 == 0) 
-
+                if (player % 2 == 0)
                 {
-
                     Console.WriteLine("Player 2 Chance");
-
                 }
-
                 else
-
                 {
-
                     Console.WriteLine("Player 1 Chance");
-
                 }
-
                 Console.WriteLine("\n");
-
-                Tablica();  
-
-                choice = int.Parse(Console.ReadLine());   
-
+                Tablica();
+                choice = int.Parse(Console.ReadLine());
                 Console.Clear();
-
-                 
-
                 if (NumTablica[choice] != 'X' && NumTablica[choice] != 'O')
-
                 {
-
-                    if (player % 2 == 0)   
-
+                    if (player % 2 == 0)
                     {
-
                         NumTablica[choice] = 'O';
-
                         player++;
-
                     }
-
                     else
-
                     {
-
                         NumTablica[choice] = 'X';
-
                         player++;
-
                     }
-
                 }
+            else
+            {
+            Console.WriteLine("ALREADY TAKEN PLACE, PLEASE PICK OTHER", choice, NumTablica[choice]);
+            }
 
-                else   
+            flag = Wygrana();
 
-                {
-
-                    Console.WriteLine("Already taken place", choice, NumTablica[choice]);
-
-                    Console.WriteLine("\n");
-
-                }
-
-                flag = Wygrana();  
-
-            } while (flag != 1 && flag != -1); 
-
-
+            } while (flag != 1 && flag != -1);
 
             Console.Clear();
-
-            Tablica(); 
-
-
+            
+            Tablica();
 
             if (flag == 1)
-
             {
-
                 Console.WriteLine("Player {0} has won", (player % 2) + 1);
-
             }
+            else
+           { 
+           Console.WriteLine("Draw");
+           }
+           Console.ReadLine();
+           }
+           private static void Tablica()
 
-            else  
+           {
 
-            {
-
-                Console.WriteLine("Draw");
-
-            }
-
-            Console.ReadLine();
-
-        }
-
-
-        private static void Tablica()
-
-        {
-
-            
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.WriteLine("  .........................");
             Console.WriteLine("  :       :       :       :");
             Console.WriteLine("  :   {0}   :   {1}   :   {2}   :", NumTablica[1], NumTablica[2], NumTablica[3]);
@@ -148,7 +97,7 @@ namespace TicTacToe1
             Console.WriteLine("  :   {0}   :   {1}   :   {2}   :", NumTablica[7], NumTablica[8], NumTablica[9]);
             Console.WriteLine("  :       :       :       :");
             Console.WriteLine("  .........................");
-            
+
         }
 
         public static void Start()
@@ -158,9 +107,9 @@ namespace TicTacToe1
             Console.WriteLine("      OO      OO                                        XX     XX                  ");
             Console.WriteLine("     OO        OO                                        XX   XX                     ");
             Console.WriteLine("    OOO        OOO                                        XX XX                ");
-            Console.WriteLine("    OOO        OOO     AA          N     N   DDD           XXX                   ");
-            Console.WriteLine("    OOO        OOO    A  A        N N   N    D  DD        XX XX               ");
-            Console.WriteLine("     OO       OO     A AA A      N   N N     D  DD       XX   XX                   ");
+            Console.WriteLine("    OOO        OOO     AA       N     N      DDD           XXX                   ");
+            Console.WriteLine("    OOO        OOO    A  A      N N   N      D  DD        XX XX               ");
+            Console.WriteLine("     OO       OO     A AA A     N   N N      D  DD       XX   XX                   ");
             Console.WriteLine("       OO    OO     A      A    N     N      DDD        XX     XX                     ");
             Console.WriteLine("         OOOO                                          XX       XX      ");
 
@@ -175,15 +124,66 @@ namespace TicTacToe1
                 "\nThe frist player who score three same signatures in a row is the winner of a game." +
                 "\nMay the best win!!!" +
                 "\nPress any key to continue");
-            Console.ReadKey();
-          
+        Console.ReadKey();
         }
-             
-
-            private static int Wygrana()
+        private static int Wygrana()
+        {
+            //Wszystkie wygrane w pionie
+            if (NumTablica[1] == NumTablica[4] && NumTablica[4] == NumTablica[7])
             {
-            // mechanizm wygranej if else
+                return 1;
+            }
+            else if
+            (NumTablica[2] == NumTablica[5] && NumTablica[5] == NumTablica[8])
+            {
+                return 1;
+            }
+            else if
+            (NumTablica[3] == NumTablica[6] && NumTablica[6] == NumTablica[9])
+            {
+                return 1;
+            }
+            //Wszystkie wygrane w poziomie
+            else if
+            (NumTablica[1] == NumTablica[2] && NumTablica[2] == NumTablica[3])
+            {
+                return 1;
+            }
+            else if
+            (NumTablica[4] == NumTablica[5] && NumTablica[5] == NumTablica[6])
+            {
+                return 1;
+            }
+            else if
+            (NumTablica[7] == NumTablica[8] && NumTablica[8] == NumTablica[9])
+            {
+                return 1;
+            }
+            //Wszystkie wygrane po skosie
+            else if
+            (NumTablica[3] == NumTablica[5] && NumTablica[5] == NumTablica[7])
+            {
+                return 1;
+            }
+            else if
+            (NumTablica[1] == NumTablica[5] && NumTablica[5] == NumTablica[9])
+            {
+                return 1;
+            }
+            //Remisy 
+            else if
+            (NumTablica[1] != '1' && NumTablica[2] != '2' && NumTablica[3] != '3' && NumTablica[4] != '4' && NumTablica[5] != '5' && NumTablica[6] != '6' && NumTablica[7] != '7' && NumTablica[8] != '8' && NumTablica[9] != '9')
+
+            {
+
+                return -1;
 
             }
+            else
+            {
+                return 0;
+            }
+            
+        }
     }
 }
