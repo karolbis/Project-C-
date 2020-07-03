@@ -27,6 +27,7 @@ namespace TicTacToe1
             do
             {
                 
+            Console.WriteLine("\n");
                 Console.WriteLine("Player 1 is X || Player 2 is O");
 
                 Console.WriteLine("\n");
@@ -55,7 +56,12 @@ namespace TicTacToe1
                         NumTablica[choice] = 'X';
                         player++;
                     }
+                    
+                    
+
+
                 }
+
             else
             {
             Console.WriteLine("ALREADY TAKEN PLACE, PLEASE PICK OTHER", choice, NumTablica[choice]);
@@ -68,22 +74,34 @@ namespace TicTacToe1
             Console.Clear();
             
             Tablica();
-
+            
             if (flag == 1)
             {
                 Console.WriteLine("Player {0} has won", (player % 2) + 1);
+                Console.WriteLine("Here is your trophy:");
+                Console.WriteLine("  __________     "             );
+                Console.WriteLine(" |    XOX   |    "              );
+                Console.WriteLine("  |   OXO  |     "       );
+                Console.WriteLine("   |  XOX |      "       );
+                Console.WriteLine("    |____|       "           );
+                Console.WriteLine("      ||         "            );
+                Console.WriteLine("      ||         "             );
+                Console.WriteLine("     ||||        "                 );
             }
             else
            { 
            Console.WriteLine("Draw");
            }
-           Console.ReadLine();
+            Console.ReadLine();
            }
-           private static void Tablica()
+           
+
+        
+        private static void Tablica()
 
            {
 
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("  .........................");
             Console.WriteLine("  :       :       :       :");
             Console.WriteLine("  :   {0}   :   {1}   :   {2}   :", NumTablica[1], NumTablica[2], NumTablica[3]);
@@ -126,6 +144,9 @@ namespace TicTacToe1
                 "\nPress any key to continue");
         Console.ReadKey();
         }
+
+        
+
         private static int Wygrana()
         {
             //Wszystkie wygrane w pionie
@@ -187,3 +208,6 @@ namespace TicTacToe1
         }
     }
 }
+
+
+
