@@ -1,0 +1,11 @@
+C:\Users\X\source\repos\Tictactoe\Tictactoe\bin\Debug\netcoreapp3.1\Tictactoe.exe
+C:\Users\X\source\repos\Tictactoe\Tictactoe\bin\Debug\netcoreapp3.1\Tictactoe.deps.json
+C:\Users\X\source\repos\Tictactoe\Tictactoe\bin\Debug\netcoreapp3.1\Tictactoe.runtimeconfig.json
+C:\Users\X\source\repos\Tictactoe\Tictactoe\bin\Debug\netcoreapp3.1\Tictactoe.runtimeconfig.dev.json
+C:\Users\X\source\repos\Tictactoe\Tictactoe\bin\Debug\netcoreapp3.1\Tictactoe.dll
+C:\Users\X\source\repos\Tictactoe\Tictactoe\bin\Debug\netcoreapp3.1\Tictactoe.pdb
+C:\Users\X\source\repos\Tictactoe\Tictactoe\obj\Debug\netcoreapp3.1\Tictactoe.csprojAssemblyReference.cache
+C:\Users\X\source\repos\Tictactoe\Tictactoe\obj\Debug\netcoreapp3.1\Tictactoe.AssemblyInfoInputs.cache
+C:\Users\X\source\repos\Tictactoe\Tictactoe\obj\Debug\netcoreapp3.1\Tictactoe.AssemblyInfo.cs
+C:\Users\X\source\repos\Tictactoe\Tictactoe\obj\Debug\netcoreapp3.1\Tictactoe.dll
+C:\Users\X\source\repos\Tictactoe\Tictactoe\obj\Debug\netcoreapp3.1\Tictactoe.pdb
